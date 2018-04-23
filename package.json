@@ -4,6 +4,8 @@
     "description": "Language support for the ataraxia programming language",
     "version": "0.1.1",
     "publisher": "AugmentedFourth",
+    "license": "UPL-1.0",
+    "repository": "https://gitlab.com/AugmentedFourth/ataraxia-vscode",
     "engines": {
         "vscode": "^1.22.0"
     },
