@@ -1,0 +1,26 @@
+{
+    "name": "ataraxia",
+    "displayName": "ataraxia",
+    "description": "Language support for the ataraxia programming language",
+    "version": "0.1.1",
+    "publisher": "AugmentedFourth",
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "ataraxia",
+            "aliases": ["ataraxia", "ataraxia"],
+            "extensions": [".aaa",".ataraxia"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "ataraxia",
+            "scopeName": "source.aaa",
+            "path": "./syntaxes/ataraxia.tmLanguage.json"
+        }]
+    }
+}

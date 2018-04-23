@@ -1,0 +1,147 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "ataraxia",
+    "fileTypes": ["aaa", "ataraxia"],
+    "patterns": [
+        {
+            "include": "#block_comment"
+        },
+        {
+            "begin": "([a-zA-Z_~`!@#$%^&*+=|:;'<>,.?/][a-zA-Z0-9_~`!@#$%^&*+=|:;'<>,.?/\\-]*)\\s*?(:)",
+            "patterns": [
+                {
+                    "name": "keyword.other.arrow.ataraxia",
+                    "match": "->"
+                },
+                {
+                    "name": "entity.name.type.ataraxia",
+                    "match": "(\\b[A-Z][a-zA-Z0-9_'\\-]*\\b)+"
+                }
+            ],
+            "end": "(:=)",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function.ataraxia"
+                },
+                "2": {
+                    "name": "keyword.other.colon.ataraxia"
+                }
+            },
+            "endCaptures": {
+                "1": {
+                    "name": "keyword.other.coloneq.ataraxia"
+                }
+            }
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#string_single"
+        },
+        {
+            "name": "comment.line.ataraxia",
+            "match": "(\\\\).*$\n?",
+            "comment": "Line comment"
+        },
+        {
+            "match": "\\b([0-9][0-9_]*|0([xX][0-9a-fA-F][0-9a-fA-F_]*|[bB][01][01_]*))\\b",
+            "name": "constant.numeric.ataraxia",
+            "comment": "integer literal"
+        },
+        {
+            "match": "\\b(([0-9]*|[0-9][0-9_]*)\\.[0-9_]*([eE][+-]?[0-9]+)?|[0-9]+[eE][+-]?[0-9]+)\\b",
+            "name": "constant.numeric.float.ataraxia",
+            "comment": "float literal"
+        },
+        {
+            "match": "\\b(NaN|inf|-inf)\\b",
+            "name": "constant.numeric.float.ataraxia",
+            "comment": "special float literal"
+        },
+        {
+            "name": "keyword.operator.ataraxia",
+            "match": "[_~`!@#$%^&*+=|:;'<>,.?/][_~`!@#$%^&*+=|:;'<>,.?/\\-]*"
+        },
+        {
+            "match": "\\(\\s*\\)",
+            "name": "constant.unit.ataraxia"
+        },
+        {
+            "match": "\\b(true|false)\\b",
+            "name": "constant.language.boolean.ataraxia"
+        },
+        {
+            "match": "(\\[|\\])",
+            "name": "constant.language.list.ataraxia"
+        }
+    ],
+    "repository": {
+        "block_comment": {
+            "applyEndPatternLast": 1,
+            "begin": "\\\\\\{(?!#)",
+            "captures": {
+                "0": {
+                    "name": "punctuation.definition.comment.ataraxia"
+                }
+            },
+            "end": "\\\\\\}",
+            "name": "comment.block.ataraxia",
+            "patterns": [{
+                "include": "#block_comment"
+            }]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.ataraxia",
+                    "match": "\\b(if|while|rep)\\b"
+                },
+                {
+                    "name": "keyword.other.arrow.ataraxia",
+                    "match": "->"
+                },
+                {
+                    "name": "keyword.other.coloneq.ataraxia",
+                    "match": ":="
+                },
+                {
+                    "name": "keyword.other.colon.ataraxia",
+                    "match": ":"
+                }
+            ]
+        },
+        "string": {
+            "name": "string.quoted.double.ataraxia",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [{
+                "name": "constant.character.escape.ataraxia",
+                "match": "\\\\."
+            }]
+        },
+        "string_single": {
+            "name": "string.quoted.single.ataraxia",
+            "match": "(#')((\\\\['\"\\\\nrt0])|[^'\\\\])(')",
+            "captures": {
+                "1": {
+                    "name": "punctuation.definition.string.begin.ataraxia"
+                },
+                "3": {
+                    "name": "constant.character.escape.control.ataraxia"
+                },
+                "4": {
+                    "name": "punctuation.definition.string.end.ataraxia"
+                }
+            },
+            "patterns": [{
+                "name": "invalid.illegal.ataraxia",
+                "match": "\\\\n"
+            }]
+        }
+    },
+    "scopeName": "source.aaa"
+}
